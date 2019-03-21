@@ -24,6 +24,8 @@ namespace TrtlBotSharp
                 coinName = (string)Config["coinName"];
                 coinSymbol = (string)Config["coinSymbol"];
                 coinUnits = (decimal)Config["coinUnits"];
+                coinAddressLength = (int)Config["coinAddressLength"];
+                coinAddressPrefix = (string)Config["coinAddressPrefix"];
                 tipFee = (decimal)Config["tipFee"];
                 tipMixin = (int)Config["tipMixin"];
                 tipSuccessReact = (string)Config["tipSuccessReact"];
@@ -61,6 +63,8 @@ namespace TrtlBotSharp
                 ["coinName"] = coinName,
                 ["coinSymbol"] = coinSymbol,
                 ["coinUnits"] = coinUnits,
+                ["coinAddressLength"] = coinAddressLength,
+                ["coinAddressPrefix"] = coinAddressPrefix,
                 ["tipFee"] = tipFee,
                 ["tipMixin"] = tipMixin,
                 ["tipSuccessReact"] = tipSuccessReact,
