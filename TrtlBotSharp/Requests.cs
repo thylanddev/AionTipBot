@@ -52,7 +52,7 @@ namespace TrtlBotSharp
             }
             catch (Exception e)
             {
-                TrtlBotSharp.Log(2, "TrtlBot", "Failed while sending request to host {0}: {1}", Host, e.Message);
+                TrtlBotSharp.Log(2, "AionBot", "Failed while sending request to host {0}: {1}", Host, e.Message);
             }
             return Result;
         }
@@ -72,7 +72,7 @@ namespace TrtlBotSharp
             }
             catch
             {
-                TrtlBotSharp.Log(2, "TrtlBotSharp", "Failed while fetching data from host {0}", Host);
+                TrtlBotSharp.Log(2, "AionTipBot", "Failed while fetching data from host {0}", Host);
             }
             return Result;
         }

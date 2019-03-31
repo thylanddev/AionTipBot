@@ -39,9 +39,9 @@ namespace TrtlBotSharp
 
         // Currency Variables
         public static string
-            coinName = "TurtleCoin",
-            coinSymbol = "TRTL",
-            coinAddressPrefix = "TRTL";
+            coinName = "Aion",
+            coinSymbol = "AION",
+            coinAddressPrefix = "0xe";
         public static decimal
             coinUnits = 100;
         public static int
@@ -49,9 +49,9 @@ namespace TrtlBotSharp
 
         // Tipping Variables
         public static decimal
-            tipFee = 10;
+            tipFee = 0;
         public static int
-            tipMixin = 3;
+            tipMixin = 0;
         public static string
             tipDefaultAddress = "",
             tipSuccessReact = "💸",
@@ -79,14 +79,14 @@ namespace TrtlBotSharp
         public static string
             daemonHost = "127.0.0.1";
         public static int
-            daemonPort = 11898;
+            daemonPort = 8545;
 
         // Wallet Variables
         public static string
             walletHost = "127.0.0.1",
             walletRpcPassword = "password";
         public static int
-            walletPort = 8070,
+            walletPort = 8545,
             walletUpdateDelay = 5000;
     }
 }
