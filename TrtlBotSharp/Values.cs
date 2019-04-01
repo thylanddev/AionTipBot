@@ -41,11 +41,11 @@ namespace TrtlBotSharp
         public static string
             coinName = "Aion",
             coinSymbol = "AION",
-            coinAddressPrefix = "0xe";
+            coinAddressPrefix = "0xa0";
         public static decimal
             coinUnits = 100;
         public static int
-            coinAddressLength = 99;
+            coinAddressLength = 66;
 
         // Tipping Variables
         public static decimal
@@ -84,7 +84,7 @@ namespace TrtlBotSharp
         // Wallet Variables
         public static string
             walletHost = "127.0.0.1",
-            walletRpcPassword = "password";
+            walletRpcPassword = "";
         public static int
             walletPort = 8545,
             walletUpdateDelay = 5000;
