@@ -174,7 +174,7 @@ namespace TrtlBotSharp
             };
 
             // Send transaction
-            JObject Result = Request.RPC(walletHost, walletPort, "sendTransaction", Transaction, walletRpcPassword);
+            JObject Result = Request.RPC(walletHost, walletPort, "sendTransaction", Transaction);
             if (Result.ContainsKey("transactionHash"))
             {
                 // Log transaction
@@ -201,7 +201,7 @@ namespace TrtlBotSharp
         public static async void BeginMonitoring()
         {
             // Get wallet status
-            JObject Result = Request.RPC(walletHost, walletPort, "getStatus", null, walletRpcPassword);
+            JObject Result = Request.RPC(walletHost, walletPort, "getStatus");
             if (Result.Count > 0 && Result.ContainsKey("error")) return;
 
             // Get last sync height
@@ -215,7 +215,7 @@ namespace TrtlBotSharp
                 try
                 {
                     // Update wallet status
-                    Result = Request.RPC(walletHost, walletPort, "getStatus", null, walletRpcPassword);
+                    Result = Request.RPC(walletHost, walletPort, "getStatus");
                     if (Result.Count < 1 || !Result.HasValues || Result.ContainsKey("error"))
                         continue;
 
@@ -235,7 +235,7 @@ namespace TrtlBotSharp
 
                         // Get transaction list
                         JObject Transactions = Request.RPC(walletHost, walletPort, "getTransactions",
-                            new JObject { ["firstBlockIndex"] = SyncHeight, ["blockCount"] = SyncSize }, walletRpcPassword);
+                            new JObject { ["firstBlockIndex"] = SyncHeight, ["blockCount"] = SyncSize });
 
                         // Loop through transaction data
                         if (Transactions.Count > 0 && !Transactions.ContainsKey("error"))
@@ -281,7 +281,7 @@ namespace TrtlBotSharp
                         {
                             // Get transaction
                             JObject Transaction = Request.RPC(walletHost, walletPort, "getTransaction",
-                                new JObject { ["transactionHash"] = ConfirmedTransaction.Key }, walletRpcPassword);
+                                new JObject { ["transactionHash"] = ConfirmedTransaction.Key });
                             if (!Transaction.HasValues || Transaction.Count < 1) continue;
                             else Transaction = (JObject)Transaction["transaction"];
                             Log(2, "Wallet", "Scanning transaction with tx {0}", ConfirmedTransaction.Key);
@@ -412,7 +412,7 @@ namespace TrtlBotSharp
                     foreach (KeyValuePair<string, JObject> UnconfirmedTransaction in NewTransactions)
                     {
                         // Get transaction info
-                        JObject Transaction = Request.RPC(walletHost, walletPort, "getTransaction", new JObject { ["transactionHash"] = UnconfirmedTransaction.Key }, walletRpcPassword);
+                        JObject Transaction = Request.RPC(walletHost, walletPort, "getTransaction", new JObject { ["transactionHash"] = UnconfirmedTransaction.Key });
 
                         // Check confirmation status
                         if ((int)Transaction["unlockTime"] <= 3)

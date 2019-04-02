@@ -32,7 +32,7 @@ namespace TrtlBotSharp
 
         // Bot Variables
         public static string
-            botToken = "0",
+            botToken = "NTQyMzU0MzQxNDM3MTEyMzIx.XKLmTg.LnjgrjbtVrewfWGfzA9vutZlLcU",
             botPrefix = ".";
         public static int
             botMessageCache = 0;
