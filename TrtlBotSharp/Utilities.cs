@@ -12,7 +12,7 @@ namespace TrtlBotSharp
         public static decimal GetSupply()
         {
             // Get last block header from daemon
-            JObject Result = Request.RPC(daemonHost, daemonPort, "eth_getBlockByHash");
+            JObject Result = Request.RPC(daemonHost, daemonPort, "eth_getBlockByHash", null);
             if (Result.Count < 1 || Result.ContainsKey("error")) return 0;
 
             // Use last block hash to get last block from the network
@@ -28,7 +28,7 @@ namespace TrtlBotSharp
         public static Task SetAddress()
         {
             // Get address list from wallet
-            JObject Result = Request.RPC(walletHost, walletPort, "eth_accounts");
+            JObject Result = Request.RPC(walletHost, walletPort, "eth_accounts", null);
             if (Result.Count < 1 || Result.ContainsKey("error")) tipDefaultAddress = "";
 
             else
